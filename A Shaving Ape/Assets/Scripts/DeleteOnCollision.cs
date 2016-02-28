@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class DeleteOnCollision : MonoBehaviour {
-
-	bool goingDown = false;
-
-	void OnCollisionEnter(Collision coll){
-		if (coll.gameObject.tag == "Razor") {
+public class DeleteOnCollision : MonoBehaviour 
+{	
+	void OnCollisionEnter(Collision coll)
+	{		
+		if (coll.gameObject.tag == "Razor") 
+		{
+			GameManager GM = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
+			GM.hairballcount -= 1;
 			DestroyObject (gameObject);
-			//goingDown = true;
+
+			Text hairballText = GameObject.FindGameObjectWithTag ("Hairball Text").GetComponent<Text> ();
+			hairballText.text = "Hairballs Left: " + GM.hairballcount.ToString();
 		}
 	}
-
-	//void Update(){
-		//if (goingDown) {
-			//Vector3 newPosition = gameObject.transform.position;
-			//newPosition.y = newPosition.y--;
-			//gameObject.transform.position = newPosition;
-		//}
-	//}
 }

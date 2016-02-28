@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Controls : MonoBehaviour {
-
+public class Controls : MonoBehaviour 
+{
 	public float speed;
 
 	private Rigidbody rb;
@@ -19,12 +19,16 @@ public class Controls : MonoBehaviour {
 		float moveVertical = Input.GetAxis ("Vertical");
 
 
-		if (Input.GetKeyDown (KeyCode.LeftShift)) {
+		if (Input.GetKeyDown (KeyCode.LeftShift)) 
+		{
 			zMovement = speed * (float)Time.fixedDeltaTime;
 		}
-		if(Input.GetKeyDown (KeyCode.LeftControl)) {
+
+		if(Input.GetKeyDown (KeyCode.LeftControl)) 
+		{
 			zMovement = -speed * (float)Time.fixedDeltaTime;
 		}
+
 		Vector3 movement = new Vector3 (moveHorizontal, zMovement, moveVertical);
 
 		rb.AddForce (movement * speed);

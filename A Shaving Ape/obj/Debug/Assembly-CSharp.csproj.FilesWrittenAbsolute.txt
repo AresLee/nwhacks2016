@@ -1,0 +1,17 @@
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/obj/Debug/Assembly-CSharp.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/UnityEngine.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/UnityEditor.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Mono.Cecil.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Unity.DataContract.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/cblim/Documents/Git/SourceTree/nwhacks2016/A Shaving Ape/Temp/bin/Debug/Mono.Cecil.Mdb.dll
