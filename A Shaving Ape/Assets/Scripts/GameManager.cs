@@ -36,12 +36,13 @@ public class GameManager : MonoBehaviour
 
 			float elapsedTime = 0.001f * SW.ElapsedMilliseconds;
 
-            //if (elapsedTime < 10 && elapsedTime > 0) {
-            //	stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 4);
-            //} else if (elapsedTime > 0){
-            //	stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 5);
-            //}
-            stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString();
+			if (elapsedTime < 10 && elapsedTime.ToString ().Length > 5) {
+				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 4);
+			} else if (elapsedTime > 0 && elapsedTime.ToString ().Length > 6) {
+				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 5);
+			} else {
+				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ();
+			}
 		}
 	}
 
