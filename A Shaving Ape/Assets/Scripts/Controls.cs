@@ -20,10 +20,10 @@ public class Controls : MonoBehaviour {
 
 
 		if (Input.GetKeyDown (KeyCode.LeftShift)) {
-			zMovement = 20f * (float)Time.fixedDeltaTime;
+			zMovement = speed * (float)Time.fixedDeltaTime;
 		}
 		if(Input.GetKeyDown (KeyCode.LeftControl)) {
-			zMovement = -20f * (float)Time.fixedDeltaTime;
+			zMovement = -speed * (float)Time.fixedDeltaTime;
 		}
 		Vector3 movement = new Vector3 (moveHorizontal, zMovement, moveVertical);
 
