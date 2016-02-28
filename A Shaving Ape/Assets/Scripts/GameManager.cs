@@ -9,9 +9,15 @@ public class GameManager : MonoBehaviour
 {
 	public GameObject hairballPrefab;
 	public Stopwatch SW = new Stopwatch ();
+	public Animator anim;
 	public float radius;
 	public int hairballcount = 0;
 	public int maxhairball;
+	bool gameEnded = false;
+
+	float elapsedTime;
+	public float highScore = 2000.0f;
+	string highScoreKey = "HighScore";
 
 	// Use this for initialization
 	void Start () 
@@ -19,22 +25,34 @@ public class GameManager : MonoBehaviour
 		CreateHairBalls ();
 		InitHairballText ();
 	}
-	
+
 	// Update is called once per frame
 	void Update()
 	{
+		if (Input.GetKey (KeyCode.R)) {
+			PlayerPrefs.SetFloat (highScoreKey, 999.00f);
+		}
+		Text hairballText = GameObject.FindGameObjectWithTag ("Hairball Text").GetComponent<Text> ();
+//		if (hairballcount >= 1) {
+//			hairballcount -= 1;
+//		}
+		
+		hairballText.text = "Hairballs Left: " + hairballcount.ToString();
+
 		if (hairballcount < maxhairball) 
 		{
-			SW.Start ();
+			elapsedTime = 0.001f * SW.ElapsedMilliseconds;
 
+			if (!gameEnded) {
+				SW.Start ();
+			}
 			Text stopwatchText = GameObject.FindGameObjectWithTag ("Stopwatch Text").GetComponent<Text> ();
 
-			if (hairballcount == 0) 
+			if (hairballcount == 0 && !gameEnded) 
 			{
 				SW.Stop ();
+				GameEnd ();
 			}
-
-			float elapsedTime = 0.001f * SW.ElapsedMilliseconds;
 
 			if (elapsedTime < 10 && elapsedTime.ToString ().Length > 5) {
 				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 4);
@@ -43,6 +61,27 @@ public class GameManager : MonoBehaviour
 			} else {
 				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ();
 			}
+		}
+	}
+
+	void GameEnd() 
+	{
+		gameEnded = true;
+		anim.SetTrigger ("scaleUp");
+
+		if (elapsedTime < PlayerPrefs.GetFloat(highScoreKey)) {
+			highScore = elapsedTime;
+			PlayerPrefs.SetFloat (highScoreKey, elapsedTime);
+			PlayerPrefs.Save ();
+
+			Text highscoreText = GameObject.FindGameObjectWithTag ("Highscore Text").GetComponent<Text> ();
+			highscoreText.text = "HIGHSCORE!\n" + highScore.ToString ();
+		} 
+		else 
+		{
+			Text highscoreText = GameObject.FindGameObjectWithTag ("Highscore Text").GetComponent<Text> ();
+			highscoreText.text = "NOT A HIGHSCORE :(";
+			highscoreText.text += "\n Fastest Time: \n " + PlayerPrefs.GetFloat (highScoreKey);
 		}
 	}
 
@@ -73,3 +112,4 @@ public class GameManager : MonoBehaviour
 		hairballText.text = "Hairballs Left: " + hairballcount.ToString();
 	}
 }
+
