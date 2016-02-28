@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour
 
 			float elapsedTime = 0.001f * SW.ElapsedMilliseconds;
 
-			if (elapsedTime < 10) {
+			if (elapsedTime < 10 && elapsedTime > 0) {
 				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 4);
-			} else {
+			} else if (elapsedTime > 0){
 				stopwatchText.text = "Elapsed Time: " + elapsedTime.ToString ().Substring (0, 5);
 			}
 				
