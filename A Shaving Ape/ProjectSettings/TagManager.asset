@@ -8,6 +8,8 @@ TagManager:
   - Hairball
   - Razor
   - Stopwatch Text
+  - ApeFace
+  - MissedZone
   layers:
   - Default
   - TransparentFX

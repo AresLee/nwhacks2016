@@ -111,5 +111,10 @@ public class GameManager : MonoBehaviour
 		Text hairballText = GameObject.FindGameObjectWithTag ("Hairball Text").GetComponent<Text> ();
 		hairballText.text = "Hairballs Left: " + hairballcount.ToString();
 	}
+
+    public void penalty()
+    {
+        elapsedTime += 2.0f;
+    }
 }
 
